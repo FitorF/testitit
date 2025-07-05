@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kontakt – Salloni i Bukurisë</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9e4cf;
+      color: #333;
+      padding: 20px;
+    }
+
+    header {
+      background-color: #fff3eb;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #9c6f5c;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      background-color: #fff3eb;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #7b4e3c;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 20px;
+      border: 2px solid #9c6f5c;
+      border-radius: 10px;
+      font-size: 1em;
+      resize: vertical;
+      font-family: 'Segoe UI', sans-serif;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: #7b4e3c;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 100px;
+    }
+
+    button {
+      background-color: #9c6f5c;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s;
+      display: block;
+      margin: auto;
+    }
+
+    button:hover {
+      background-color: #7b4e3c;
+      transform: scale(1.05);
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9em;
+      margin-top: -15px;
+      margin-bottom: 15px;
+      display: none;
+    }
+
+    footer {
+      margin-top: 60px;
+      background-color: #222;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer a img {
+      width: 30px;
+      margin: 0 10px;
+      transition: transform 0.3s ease;
+    }
+
+    footer a img:hover {
+      transform: scale(1.3);
+    }
+  </style>
+</head>
+<body>
+
+  <header>Na Kontakto</header>
+
+  <form id="contactForm" onsubmit="return validateForm()">
+    <label for="name">Emri</label>
+    <input type="text" id="name" name="name" placeholder="Shkruaj emrin tuaj" required />
+    <div class="error" id="nameError">Ju lutemi shkruani emrin.</div>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Shembull: emri@domeni.com" required />
+    <div class="error" id="emailError">Ju lutemi shkruani një email të vlefshëm.</div>
+
+    <label for="phone">Numri i Telefonit</label>
+    <input type="text" id="phone" name="phone" placeholder="+383 44 000 000" required />
+    <div class="error" id="phoneError">Ju lutemi shkruani numrin e telefonit.</div>
+
+    <label for="message">Mesazhi</label>
+    <textarea id="message" name="message" placeholder="Shkruaj mesazhin tuaj..." required></textarea>
+    <div class="error" id="messageError">Ju lutemi shkruani mesazhin.</div>
+
+    <button type="submit">Dërgo</button>
+  </form>
+
+  <footer>
+    <p>Faleminderit që na zgjodhët. NN Beauty Bliss – Bukuri me pasion dhe stil.</p>
+    <div>
+      <a href="https://www.facebook.com/share/16axBtGRhW/?mibextid=wwXIfr" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Facebook-icon-1.png" alt="Facebook" />
+      </a>
+      <a href="https://www.instagram.com/nn_beautybliss?igsh=OTJuNmxhanc4MnFm&utm_source=qr" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+      </a>
+    </div>
+    <p>📍 Ersan Mazreku, Prizren 20000</p>
+  </footer>
+
+<script>
+  function validateForm() {
+    let valid = true;
+
+    // Clear all error messages
+    document.querySelectorAll('.error').forEach(e => e.style.display = 'none');
+
+    // Name
+    const name = document.getElementById('name').value.trim();
+    if (name === '') {
+      document.getElementById('nameError').style.display = 'block';
+      valid = false;
+    }
+
+    // Email (basic validation)
+    const email = document.getElementById('email').value.trim();
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,6}$/i;
+    if (!emailPattern.test(email)) {
+      document.getElementById('emailError').style.display = 'block';
+      valid = false;
+    }
+
+    // Phone
+    const phone = document.getElementById('phone').value.trim();
+    if (phone === '') {
+      document.getElementById('phoneError').style.display = 'block';
+      valid = false;
+    }
+
+    // Message
+    const message = document.getElementById('message').value.trim();
+    if (message === '') {
+      document.getElementById('messageError').style.display = 'block';
+      valid = false;
+    }
+
+    if (valid) {
+      alert('Faleminderit për mesazhin! Ne do t\'ju kontaktojmë së shpejti.');
+      // Këtu mund të shtosh kodin për të dërguar të dhënat në server ose email
+      document.getElementById('contactForm').reset();
+    }
+
+    return false; // Parandalon dërgimin real të formës për testim
+  }
+</script>
+
+</body>
+</html>

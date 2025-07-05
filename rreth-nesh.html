@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rreth Nesh – Salloni i Bukurisë</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9e4cf;
+      color: #333;
+    }
+
+    header {
+      background-color: #fff3eb;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .header-title {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #9c6f5c;
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .back-button {
+      background-color: #9c6f5c;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 1em;
+      margin-right: 10px;
+      transition: background-color 0.3s ease, transform 0.2s;
+    }
+
+    .back-button:hover {
+      background-color: #7b4e3c;
+      transform: scale(1.05);
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #7b4e3c;
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.6em;
+    }
+
+    .info {
+      margin-top: 30px;
+      font-size: 1.1em;
+    }
+
+    .info strong {
+      color: #9c6f5c;
+    }
+
+    .social-icons img {
+      width: 30px;
+      margin-right: 10px;
+      vertical-align: middle;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.2);
+    }
+
+    footer {
+      margin-top: 60px;
+      background-color: #222;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer a img {
+      width: 30px;
+      margin: 0 10px;
+    }
+
+    @media (max-width: 500px) {
+      .header-title {
+        font-size: 1.4em;
+      }
+
+      .back-button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+      }
+    }
+
+
+    div {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <button class="back-button" onclick="goBack()">← Kthehu</button>
+    <div class="header-title">Rreth Nesh</div>
+  </header>
+
+<main>
+  <h2>Kush jemi ne?</h2>
+  <p>
+    NN Beuaty Bliss, me pronare <strong>Nerimane Kryeziu-Rrafshi</strong> – me përkushtim dhe përvojë të gjatë në industrinë e bukurisë, ajo ka ndërtuar një ambient mikpritës dhe profesional për çdo klient
+  </p>
+    <h2>Informacione Kontakti</h2>
+    <div class="info">
+      
+      <p><strong>📞 Telefoni:</strong> +38344256832</p>
+      <p><strong>📧 Email:</strong> natyrarrafshi4@gmail.com</p>
+      <p><strong>📱 Instagram:</strong> <a href="https://www.instagram.com/nn_beautybliss?igsh=OTJuNmxhanc4MnFm&utm_source=qr" target="_blank">@nnbeautybliss</a></p>
+      <p><strong>📘 Facebook:</strong> <a href="https://www.facebook.com/share/16axBtGRhW/?mibextid=wwXIfr" target="_blank">NN Beauty Bliss</a></p>
+    </div>
+  </main>
+
+  <div style="max-width: 600px; margin: 40px auto;">
+  <h2 style="text-align: center; color: #7b4e3c;">Lokacioni 📍</h2>
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d922.3820427071714!2d20.736984469665707!3d42.2208485913692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135395a01c3fa9e3%3A0x7867b0cc4048dafa!2sErsan%20Mazreku%2C%20Prizren%2020000!5e1!3m2!1sen!2sus!4v1751744817743!5m2!1sen!2sus" 
+    width="100%" 
+    height="400" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+
+
+  <footer>
+    <p>Faleminderit që na zgjodhët. NN Beauty Bliss – Bukuri me pasion dhe stil.</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/nnbeautybliss" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Facebook-icon-1.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/nn_beautybliss?igsh=OTJuNmxhanc4MnFm&utm_source=qr" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+      </a>
+    </div>
+   <p>📍 Ersan Mazreku, Prizren 20000</p>
+  </footer>
+
+  <script>
+    function goBack() {
+      window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+</html>

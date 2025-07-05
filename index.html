@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NN Beauty Bliss</title>
+
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9e4cf;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff3eb;
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #9c6f5c;
+    }
+
+    /* === Fitor Baba png U === */
+    .logo-img img {
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.logo-img img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 10px;
+  border-radius: 12px;
+}
+
+
+    /* === Mbaron === */
+
+
+
+    .menu-toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background-color: #9c6f5c;
+      margin: 4px 0;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* === OVERLAY MENU === */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff3eb;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+.overlay.active {
+  display: flex;
+}
+
+/* Container i logos dhe linkave në qendër */
+.overlay-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* distanca midis logos dhe butonave */
+  margin-top: -60px; /* i afron më shumë në mes */
+}
+
+/* Logo e zmadhuar dhe e afruar */
+.logo-img img {
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+/* Butonat në qendër dhe të gjerë */
+.overlay-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.overlay-links a,
+.overlay-links .back-btn {
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.overlay-links a {
+  background-color: #ffe8d6;
+  color: #9c6f5c;
+}
+
+.overlay-links a:hover {
+  background-color: #fddbb0;
+  transform: scale(1.05);
+}
+
+/* Butoni kthehu */
+.overlay-links .back-btn {
+  background-color: #9c6f5c;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.overlay-links .back-btn:hover {
+  background-color: #7b4e3c;
+}
+
+
+    /* Butoni Kthehu */
+    .back-btn {
+      margin-top: 30px;
+      background-color: #9c6f5c;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 25px;
+      border: none;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s;
+    }
+
+    .back-btn:hover {
+      background-color: #7b4e3c;
+      transform: scale(1.05);
+    }
+
+    main {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    main h1 {
+      color: #7b4e3c;
+    }
+
+    footer {
+      margin-top: 100px;
+      background-color: #222;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    footer a img {
+      width: 30px;
+      margin: 0 12px;
+      transition: transform 0.3s ease;
+    }
+
+    footer a img:hover {
+      transform: scale(1.3);
+    }
+
+    footer p {
+      margin: 10px 0;
+      font-size: 14px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+        .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      object-fit: cover;
+      height: 250px;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">NN Beauty Bliss</div>
+    <div class="menu-toggle" onclick="toggleOverlay()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+<div class="overlay" id="menuOverlay">
+  <div class="overlay-inner">
+    <div class="logo-img">
+      <!-- Ndrysho src me logon tënde -->
+      <img src="logo1.jpg" alt="Logo" />
+    </div>
+    <div class="overlay-links">
+<a href="rreth-nesh.html">Rreth Nesh</a>
+<a href="qmimet.html">Çmimet</a>
+<a href="eventet.html">Eventet</a>
+<a href="pjesmarrja.html">Pjesëmarrja televizive</a>
+<a href="certifikimet.html">Certifikimet</a>
+
+      <button class="back-btn" onclick="toggleOverlay()">Kthehu</button>
+    </div>
+  </div>
+</div>
+
+
+
+<main>
+  <h1>Mirësevini në studion tonë NN Beauty Bliss!</h1>
+  <p>Zbulo shërbimet tona, eventet speciale dhe më shumë.</p>
+
+  <div class="about-text" style="max-width: 800px; margin: 40px auto; font-size: 1.1em; line-height: 1.8; color: #5e4035; background-color: #fffaf7; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+    <p>Me një përvojë prej <strong>24 vitesh</strong> në industrinë e bukurisë, ne ofrojmë jo vetëm shërbime profesionale, por edhe një mikpritje të ngrohtë dhe përkushtim maksimal ndaj çdo klienti.</p>
+
+    <p>Për ne, klienti është gjithçka – ndaj jemi të përkushtuar të jemi gjithmonë korrektë, të kujdesshëm dhe të sjellshëm, duke e bërë çdo vizitë një përvojë të këndshme dhe të veçantë.</p>
+
+    <p>Gjatë këtyre viteve, kemi marrë pjesë në <strong>trajnime të ndryshme, evente bukurie dhe panaire</strong>, brenda dhe jashtë vendit, duke qëndruar gjithmonë në hap me trendet më të fundit të <em>“high beauty fashion”</em>.</p>
+
+    <p>Ne punojmë vetëm me <strong>produkte profesionale të certifikuara</strong>, për të garantuar cilësi të lartë dhe rezultate të sigurta.</p>
+
+    <p>Ajo që na veçon është se <strong>dashuria dhe pasioni për bukurinë</strong> janë kthyer në profesion – dhe kjo ndjehet në çdo detaj, çdo shërbim dhe çdo buzëqeshje që përcjellim.</p>
+  </div>
+
+  <div class="gallery">
+    <img src="logo1.jpg" alt="Klient i kënaqur" />
+  </div>
+</main>
+
+
+  <footer>
+    <p>Faleminderit që na zgjodhët. NN Beauty Bliss – Bukuri me pasion dhe stil.</p>
+    <div>
+      <a href="https://www.facebook.com/share/16axBtGRhW/?mibextid=wwXIfr" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Facebook-icon-1.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/nn_beautybliss?igsh=OTJuNmxhanc4MnFm&utm_source=qr" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+      </a>
+    </div>
+    <p>📍 Ersan Mazreku, Prizren 20000</p>
+  </footer>
+
+  <script>
+    function toggleOverlay() {
+      const overlay = document.getElementById('menuOverlay');
+      overlay.classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>

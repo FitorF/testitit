@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eventet – Salloni i Bukurisë</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9e4cf;
+      color: #333;
+    }
+
+    header {
+      background-color: #fff3eb;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .header-title {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #9c6f5c;
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .back-button {
+      background-color: #9c6f5c;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 1em;
+      margin-right: 10px;
+      transition: background-color 0.3s ease, transform 0.2s;
+    }
+
+    .back-button:hover {
+      background-color: #7b4e3c;
+      transform: scale(1.05);
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    h2 {
+      color: #7b4e3c;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      color: #9c6f5c;
+      margin-top: 50px;
+      margin-bottom: 10px;
+      font-size: 1.4em;
+      border-bottom: 2px solid #e2b89f;
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      object-fit: cover;
+      height: 250px;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 60px;
+      background-color: #222;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer a img {
+      width: 30px;
+      margin: 0 10px;
+      transition: transform 0.3s ease;
+    }
+
+    footer a img:hover {
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 500px) {
+      .header-title {
+        font-size: 1.4em;
+      }
+
+      .back-button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <button class="back-button" onclick="goBack()">← Kthehu</button>
+    <div class="header-title">Eventet dhe pjesëmarrja ndërkombëtare</div>
+  </header>
+
+  <main>
+    <h2>Disa momente nga eventet dhe trajnimet e zhvilluara</h2>
+
+
+    <h3>Test</h3>
+    <div class="gallery">
+      <img src="albaniaimg/foto1.jpeg" alt="foto1" />
+
+            <img src="albaniaimg/foto16.jpeg" alt="foto5" />
+    </div>
+
+
+  </main>
+
+  <footer>
+    <p>Faleminderit që na zgjodhët. NN Beauty Bliss – Bukuri me pasion dhe stil.</p>
+    <div>
+      <a href="https://www.facebook.com/share/16axBtGRhW/?mibextid=wwXIfr" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Facebook-icon-1.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/nnbeautybliss" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+      </a>
+    </div>
+    <p>📍 Ersan Mazreku, Prizren 20000</p>
+  </footer>
+
+  <script>
+    function goBack() {
+      window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+</html>

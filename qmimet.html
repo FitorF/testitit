@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Çmimet – Salloni i Bukurisë</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9e4cf;
+      color: #333;
+    }
+
+    header {
+      background-color: #fff3eb;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .header-title {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #9c6f5c;
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .back-button {
+      background-color: #9c6f5c;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 1em;
+      margin-right: 10px;
+      transition: background-color 0.3s ease, transform 0.2s;
+    }
+
+    .back-button:hover {
+      background-color: #7b4e3c;
+      transform: scale(1.05);
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #7b4e3c;
+      margin-top: 40px;
+      border-bottom: 2px solid #9c6f5c;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #e2cfc3;
+      font-size: 1.1em;
+    }
+
+    .note {
+      font-style: italic;
+      margin-top: 30px;
+      color: #555;
+      font-size: 0.95em;
+    }
+
+    footer {
+      margin-top: 60px;
+      background-color: #222;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer a img {
+      width: 30px;
+      margin: 0 10px;
+      transition: transform 0.3s ease;
+    }
+
+    footer a img:hover {
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 500px) {
+      .header-title {
+        font-size: 1.4em;
+      }
+
+      .back-button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <button class="back-button" onclick="goBack()">← Kthehu</button>
+    <div class="header-title">Çmimet</div>
+  </header>
+
+  <main>
+    <h2>Shërbimet</h2>
+    <ul>
+      <li><span>Prerje</span> <span>€10-15</span></li>
+      <li><span>Fenirim</span> <span>€10-15</span></li>
+      <li><span>Vetulla Microblading (1 seancë)</span> <span>€60</span></li>
+      <li><span>Grim profesional</span> <span>€20</span></li>
+      <li><span>Stilim i flokëve</span> <span>€20</span></li>
+      <li><span>Ngjyrosje (100ml)</span> <span>€25</span></li>
+      <li><span>Shatir / Ombre / Balayage</span> <span>> €90</span></li>
+      <li><span>Depilim i fytyrës</span> <span>€10</span></li>
+      <li><span>Depilim i këmbëve</span> <span>€5-10</span></li>
+      <li><span>Depilim i krahëve</span> <span>€5</span></li>
+      <li><span>Mbjellje e thonjëve</span> <span>€15-20</span></li>
+      <li><span>Hair Extensions (1 fije)</span> <span>€2</span></li>
+    </ul>
+
+    <p class="note">📌 Çmimet janë opsionale varësisht nga kërkesa dhe ofertat në vazhdimësi.</p>
+  </main>
+
+  <footer>
+    <p>Faleminderit që na zgjodhët. NN Beauty Bliss – Bukuri me pasion dhe stil.</p>
+    <div>
+      <a href="https://www.facebook.com/share/16axBtGRhW/?mibextid=wwXIfr" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Facebook-icon-1.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/nn_beautybliss?igsh=OTJuNmxhanc4MnFm&utm_source=qr" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+      </a>
+    </div>
+    <p>📍 Ersan Mazreku, Prizren 20000</p>
+  </footer>
+
+  <script>
+    function goBack() {
+      window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+</html>
